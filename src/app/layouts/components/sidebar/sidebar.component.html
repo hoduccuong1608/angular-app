@@ -1,168 +1,41 @@
 <div class="app-sidebar">
-  <div class="sidebar-logo">
-    <a>
+  <div class="sidebar-header">
+    <a class="sidebar-logo">
       <img src="assets/images/learn.png" alt="logo">
       <h1>Angular</h1>
     </a>
-  </div>
-  <ul class="sidebar-nav" nz-menu nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="sidebar.open">
-    <li nz-submenu nzOpen nzTitle="Dashboard" nzIcon="dashboard">
-      <ul>
-        <li nz-menu-item nzMatchRouter>
-          <a routerLink="/welcome">Welcome</a>
-        </li>
-        <li nz-menu-item nzMatchRouter>
-          <a>Monitor</a>
-        </li>
-        <li nz-menu-item nzMatchRouter>
-          <a>Workplace</a>
-        </li>
-      </ul>
-    </li>
-    <li nz-submenu nzOpen nzTitle="Dashboard" nzIcon="dashboard">
-      <ul>
-        <li nz-menu-item nzMatchRouter>
-          <a routerLink="/welcome">Welcome</a>
-        </li>
-        <li nz-menu-item nzMatchRouter>
-          <a>Monitor</a>
-        </li>
-        <li nz-menu-item nzMatchRouter>
-          <a>Workplace</a>
-        </li>
-      </ul>
-    </li>
-    <li nz-submenu nzOpen nzTitle="Dashboard" nzIcon="dashboard">
-      <ul>
-        <li nz-menu-item nzMatchRouter>
-          <a routerLink="/welcome">Welcome</a>
-        </li>
-        <li nz-menu-item nzMatchRouter>
-          <a>Monitor</a>
-        </li>
-        <li nz-menu-item nzMatchRouter>
-          <a>Workplace</a>
-        </li>
-      </ul>
-    </li>
-    <li nz-submenu nzOpen nzTitle="Dashboard" nzIcon="dashboard">
-      <ul>
-        <li nz-menu-item nzMatchRouter>
-          <a routerLink="/welcome">Welcome</a>
-        </li>
-        <li nz-menu-item nzMatchRouter>
-          <a>Monitor</a>
-        </li>
-        <li nz-menu-item nzMatchRouter>
-          <a>Workplace</a>
-        </li>
-      </ul>
-    </li>
-    <li nz-submenu nzOpen nzTitle="Dashboard" nzIcon="dashboard">
-      <ul>
-        <li nz-menu-item nzMatchRouter>
-          <a routerLink="/welcome">Welcome</a>
-        </li>
-        <li nz-menu-item nzMatchRouter>
-          <a>Monitor</a>
-        </li>
-        <li nz-menu-item nzMatchRouter>
-          <a>Workplace</a>
-        </li>
-      </ul>
-    </li>
-    <li nz-submenu nzOpen nzTitle="Dashboard" nzIcon="dashboard">
-      <ul>
-        <li nz-menu-item nzMatchRouter>
-          <a routerLink="/welcome">Welcome</a>
-        </li>
-        <li nz-menu-item nzMatchRouter>
-          <a>Monitor</a>
-        </li>
-        <li nz-menu-item nzMatchRouter>
-          <a>Workplace</a>
-        </li>
-      </ul>
-    </li>
-    <li nz-submenu nzOpen nzTitle="Dashboard" nzIcon="dashboard">
-      <ul>
-        <li nz-menu-item nzMatchRouter>
-          <a routerLink="/welcome">Welcome</a>
-        </li>
-        <li nz-menu-item nzMatchRouter>
-          <a>Monitor</a>
-        </li>
-        <li nz-menu-item nzMatchRouter>
-          <a>Workplace</a>
-        </li>
-      </ul>
-    </li>
-    <li nz-submenu nzOpen nzTitle="Dashboard" nzIcon="dashboard">
-      <ul>
-        <li nz-menu-item nzMatchRouter>
-          <a routerLink="/welcome">Welcome</a>
-        </li>
-        <li nz-menu-item nzMatchRouter>
-          <a>Monitor</a>
-        </li>
-        <li nz-menu-item nzMatchRouter>
-          <a>Workplace</a>
-        </li>
-      </ul>
-    </li>
-    <li nz-submenu nzOpen nzTitle="Dashboard" nzIcon="dashboard">
-      <ul>
-        <li nz-menu-item nzMatchRouter>
-          <a routerLink="/welcome">Welcome</a>
-        </li>
-        <li nz-menu-item nzMatchRouter>
-          <a>Monitor</a>
-        </li>
-        <li nz-menu-item nzMatchRouter>
-          <a>Workplace</a>
-        </li>
-      </ul>
-    </li>
-    <li nz-submenu nzOpen nzTitle="Dashboard" nzIcon="dashboard">
-      <ul>
-        <li nz-menu-item nzMatchRouter>
-          <a routerLink="/welcome">Welcome</a>
-        </li>
-        <li nz-menu-item nzMatchRouter>
-          <a>Monitor</a>
-        </li>
-        <li nz-menu-item nzMatchRouter>
-          <a>Workplace</a>
-        </li>
-      </ul>
-    </li>
-    <li nz-submenu nzOpen nzTitle="Dashboard" nzIcon="dashboard">
-      <ul>
-        <li nz-menu-item nzMatchRouter>
-          <a routerLink="/welcome">Welcome</a>
-        </li>
-        <li nz-menu-item nzMatchRouter>
-          <a>Monitor</a>
-        </li>
-        <li nz-menu-item nzMatchRouter>
-          <a>Workplace</a>
-        </li>
-      </ul>
-    </li>
-    <li nz-submenu nzOpen nzTitle="Dashboard" nzIcon="dashboard">
-      <ul>
-        <li nz-menu-item nzMatchRouter>
-          <a routerLink="/welcome">Welcome</a>
-        </li>
-        <li nz-menu-item nzMatchRouter>
-          <a>Monitor</a>
-        </li>
-        <li nz-menu-item nzMatchRouter>
-          <a>Workplace</a>
-        </li>
-      </ul>
-    </li>
 
+    <span class="sidebar-trigger" (click)="onCallback()">
+            <span class="trigger" nz-icon nzType="close" nzTheme="outline"></span>
+    </span>
+  </div>
+  <ul class="sidebar-nav" nz-menu nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="sidebar.collapse">
+    <li nz-submenu nzOpen nzTitle="Dashboard" nzIcon="dashboard">
+      <ul>
+        <li nz-menu-item nzMatchRouter>
+          <a routerLink="/welcome">Welcome</a>
+        </li>
+        <li nz-menu-item nzMatchRouter>
+          <a>Monitor</a>
+        </li>
+        <li nz-menu-item nzMatchRouter>
+          <a>Workplace</a>
+        </li>
+      </ul>
+    </li>
+    <li nz-submenu nzOpen nzTitle="Dashboard" nzIcon="dashboard">
+      <ul>
+        <li nz-menu-item nzMatchRouter>
+          <a routerLink="/welcome">Welcome</a>
+        </li>
+        <li nz-menu-item nzMatchRouter>
+          <a>Monitor</a>
+        </li>
+        <li nz-menu-item nzMatchRouter>
+          <a>Workplace</a>
+        </li>
+      </ul>
+    </li>
     <li nz-submenu nzOpen nzTitle="Form" nzIcon="form">
       <ul>
         <li nz-menu-item nzMatchRouter>

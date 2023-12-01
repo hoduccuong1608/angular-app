@@ -10,8 +10,12 @@ import {WindowService} from "../service/window.service";
   styleUrls: ['./main-layout.component.scss']
 })
 export class MainLayoutComponent implements OnInit {
+  sidebarMaxWidth: number = 80*3.5;
+  sidebarMinWidth: number = 80;
+
   sidebar: Sidebar = new Sidebar(this.windowService.getCurrentScreen(), false)
-  constructor(private route: ActivatedRoute, private sidebarService: SidebarService, private windowService: WindowService
+  constructor(private route: ActivatedRoute, private sidebarService: SidebarService,
+              private windowService: WindowService
   ) {}
 
   ngOnInit() {
@@ -21,10 +25,19 @@ export class MainLayoutComponent implements OnInit {
     });
   }
 
-  // @HostListener('window:resize', ['$event'])
-  // onResize(event: Event): void {
-  //   if(this.sidebar.state !== this.windowService.getCurrentScreen()) {
-  //     this.sidebarService.setSidebar(this.windowService.getCurrentScreen(),false)
-  //   }
-  // }
+  invertSidebarCollapse(): void {
+    if (this.sidebarService) {
+      this.sidebarService.invertSidebarCollapse()
+      if(this.sidebar.state === 'mobile') {
+        this.sidebarMaxWidth = this.windowService.getBrowserWidth()
+      }
+    }
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: Event): void {
+    if(this.sidebar.state !== this.windowService.getCurrentScreen()) {
+      this.sidebarService.setStateSidebar(this.windowService.getCurrentScreen())
+    }
+  }
 }

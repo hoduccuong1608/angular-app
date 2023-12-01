@@ -23,6 +23,7 @@ import {DashboardComponent} from "./pages/dashboard/dashboard.component";
 import {MainLayoutService} from "./layouts/service/main.layout.service";
 import {WindowService} from "./layouts/service/window.service";
 import {SidebarService} from "./layouts/service/sidebar.service";
+import {NzBreadCrumbModule} from "ng-zorro-antd/breadcrumb";
 
 registerLocaleData(en);
 
@@ -37,16 +38,17 @@ registerLocaleData(en);
     HeaderComponent,
     SidebarComponent,
   ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    HttpClientModule,
-    BrowserAnimationsModule,
-    AppRoutingModule,
-    IconsProviderModule,
-    NzLayoutModule,
-    NzMenuModule
-  ],
+    imports: [
+        BrowserModule,
+        FormsModule,
+        HttpClientModule,
+        BrowserAnimationsModule,
+        AppRoutingModule,
+        IconsProviderModule,
+        NzLayoutModule,
+        NzMenuModule,
+        NzBreadCrumbModule
+    ],
   providers: [
     { provide: NZ_I18N, useValue: en_US },
     MainLayoutService, WindowService, SidebarService

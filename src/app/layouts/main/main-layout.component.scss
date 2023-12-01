@@ -4,31 +4,46 @@
 
 .main-layout {
   min-height: 100vh;
+
+  .main-sidebar {
+    position: fixed;
+    z-index: 10;
+    min-height: 100vh;
+    box-shadow: 2px 0 6px rgba(0, 21, 41, .35);
+  }
+
+  .main-header {
+    position: fixed;
+    padding: 0;
+    width: 100%;
+    z-index: 2;
+  }
+
+  .main-content {
+    padding-top: 64px;
+    margin: 0 24px 24px 24px;
+  }
+  nz-breadcrumb {
+    margin: 16px 0;
+  }
+  .inner-content {
+    overflow: initial;
+    padding: 24px;
+    background: #fff;
+    height: 100%;
+  }
 }
 
-.main-sidebar {
-  position: relative;
-  z-index: 10;
-  min-height: 100vh;
-  box-shadow: 2px 0 6px rgba(0,21,41,.35);
+@media screen and (max-width: 575px) {
+
+  .main-sidebar {
+    position: relative;
+    nz-sider {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100% !important;
+    }
+  }
 }
 
-.main-header {
-  position: fixed;
-  padding: 0;
-  width: 100%;
-  z-index: 2;
-}
-
-
-nz-content {
-  padding-top: 64px;
-  margin: 24px;
-}
-
-.inner-content {
-  overflow: initial;
-  padding: 24px;
-  background: #fff;
-  height: 100%;
-}

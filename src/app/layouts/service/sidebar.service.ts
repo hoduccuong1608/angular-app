@@ -13,16 +13,21 @@ export class SidebarService {
 
   sidebar$ = this.sidebarSubject.asObservable();
 
-  setSidebar(state: string, open: boolean) {
-    this.sidebar = new Sidebar(state, open);
+  setSidebar(state: string, collapse: boolean) {
+    this.sidebar = new Sidebar(state, collapse);
     this.sidebarSubject.next(this.sidebar);
   }
 
-  setOpenSidebar(open: boolean) {
-    this.sidebar.open = open
+  setStateSidebar(state: string) {
+    this.sidebar.state = state
+
   }
 
-  setOpenCustomSidebar() {
-    this.sidebar.open = !this.sidebar.open
+  setCollapseSidebar(collapse: boolean) {
+    this.sidebar.collapse = collapse
+  }
+
+  invertSidebarCollapse() {
+    this.sidebar.collapse = !this.sidebar.collapse
   }
 }

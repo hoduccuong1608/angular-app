@@ -1,19 +1,18 @@
-import {Component, Input} from '@angular/core';
-import {SidebarService} from "../../service/sidebar.service";
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {Sidebar} from "../../models/Sidebar";
+import {SidebarService} from "../../service/sidebar.service";
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
   @Input() sidebar: Sidebar = new Sidebar("desktop", true);
+  @Output() callback = new EventEmitter<void>();
 
-  constructor(private  sidebarService: SidebarService) {
+  onCallback(): void {
+    this.callback.emit();
   }
-   setSideBar() {
-    this.sidebarService.setOpenCustomSidebar()
-   }
 
 }

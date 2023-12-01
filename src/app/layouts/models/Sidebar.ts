@@ -1,10 +1,10 @@
 export class Sidebar {
   private _state: string;
-  private _open: boolean;
+  private _collapse: boolean;
 
-  constructor(state: string, open: boolean) {
+  constructor(state: string, collapse: boolean) {
     this._state = state;
-    this._open = open;
+    this._collapse = collapse;
   }
 
   get state(): string {
@@ -15,11 +15,11 @@ export class Sidebar {
     this._state = value;
   }
 
-  get open(): boolean {
-    return this._open;
+  get collapse(): boolean {
+    return this._collapse;
   }
 
-  set open(value: boolean) {
-    this._open = value;
+  set collapse(value: boolean) {
+    this._collapse = value;
   }
 }

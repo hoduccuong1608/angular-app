@@ -1,19 +1,31 @@
 <nz-layout class="main-layout">
-  <nz-sider class="main-sidebar"
-            nzCollapsible
-            nzWidth="256px"
-            nzBreakpoint="md"
-            [(nzCollapsed)]="sidebar.open"
-            [nzTrigger]="null">
-    <app-sidebar [sidebar]=sidebar></app-sidebar>
-  </nz-sider>
-  <nz-layout>
+  <aside class="main-sidebar"
+         [style]="sidebar.collapse ? (sidebar.state === 'mobile' ? 'width: 0' : 'width: 80px') : (sidebar.state === 'mobile' ? 'width: 100vw' : 'width: 280px')"
+         style="transition: width 0.3s;">
+    <nz-sider
+      nzCollapsible
+      nzBreakpoint="md"
+      [nzWidth]="sidebarMaxWidth"
+      [nzCollapsedWidth]="sidebar.state === 'mobile' ? 0 : sidebarMinWidth"
+      [(nzCollapsed)]="sidebar.collapse"
+      [nzTrigger]="null">
+      <app-sidebar [sidebar]="sidebar" (callback)="invertSidebarCollapse()"></app-sidebar>
+    </nz-sider>
+  </aside>
+  <nz-layout
+    [style]="sidebar.collapse ? (sidebar.state === 'mobile' ? 'marginLeft: 0' : 'marginLeft: 80px') : (sidebar.state === 'mobile' ? 'marginLeft: 0' : 'marginLeft: 280px')"
+    style="transition: margin 0.3s;">
     <nz-header class="main-header">
-      <app-header [sidebar]=sidebar></app-header>
+      <app-header [sidebar]="sidebar" (callback)="invertSidebarCollapse()"></app-header>
     </nz-header>
     <nz-content class="main-content">
+      <nz-breadcrumb>
+        <nz-breadcrumb-item>Home</nz-breadcrumb-item>
+        <nz-breadcrumb-item>List</nz-breadcrumb-item>
+        <nz-breadcrumb-item>App</nz-breadcrumb-item>
+      </nz-breadcrumb>
       <div class="inner-content">
-      <router-outlet></router-outlet>
+        <router-outlet></router-outlet>
       </div>
     </nz-content>
   </nz-layout>

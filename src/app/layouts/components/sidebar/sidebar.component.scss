@@ -1,0 +1,61 @@
+
+.app-sidebar {
+  position: relative;
+  left: 0;
+  height: 100vh;
+  .sidebar-nav {
+    overflow-y: hidden;
+    height: 100%;
+  }
+}
+
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  height: 64px;
+  overflow: hidden;
+
+  background: #001529;
+  transition: all .3s;
+
+  .sidebar-logo {
+    padding-left: 24px;
+    line-height: 64px;
+    img {
+      display: inline-block;
+      height: 32px;
+      width: 32px;
+      vertical-align: middle;
+    }
+
+    h1 {
+      display: inline-block;
+      margin: 0 0 0 20px;
+      color: #fff;
+      font-weight: 600;
+      font-size: 14px;
+      font-family: Avenir, Helvetica Neue, Arial, Helvetica, sans-serif;
+      vertical-align: middle;
+    }
+  }
+
+  .sidebar-trigger {
+    height: 64px;
+    padding: 20px 24px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all .3s,padding 0s;
+    color: white;
+
+    .trigger:hover {
+      color: #1890ff;
+    }
+  }
+}
+
+@media screen and (min-width: 575px) {
+  .sidebar-trigger {
+    visibility: hidden;
+  }
+}
+

@@ -1,8 +1,8 @@
   <div class="app-header">
-        <span class="header-trigger" (click)="setSideBar()">
+        <span class="header-trigger" (click)="onCallback()">
             <span class="trigger"
                   nz-icon
-                  [nzType]="sidebar.open ? 'menu-unfold' : 'menu-fold'"
+                  [nzType]="sidebar.collapse ? 'menu-unfold' : 'menu-fold'"
             ></span>
         </span>
   </div>
